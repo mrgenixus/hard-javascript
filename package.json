@@ -1,0 +1,19 @@
+{
+  "name": "hard-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-layout": "^0.1.0",
+    "express-less": "0.0.8",
+    "jade": "^1.11.0",
+    "jquery": "^2.1.4",
+    "uikit": "^2.24.2"
+  }
+}
