@@ -96,7 +96,13 @@ h2 Private members for object
 P Javascript doesn't intrinsically support the idea of private members, but sometimes, an implementation is complicated such that private members are required.
 
 pre: code.language-javascript.
-  var LinkedList = (function() {
+  function Node(value, next, previous) {
+    this.value = value;
+    this.next = next;
+    this.previous = previous;
+  }
+
+  function LinkedList() {
     var current = null;
 
     function last_node() {
@@ -120,56 +126,44 @@ pre: code.language-javascript.
       return local_current;
     }
 
-    function Node(value, next, previous) {
-      this.value = value;
-      this.next = next;
-      this.previous = previous;
-    }
-
-    function LinkedList() {
-
-    }
-
-    LinkedList.prototype.append = function append(value) {
+    this.append = function append(value) {
       var last = last_node();
       var new_node = new Node(value, null, last);
       if(last) last.next = new_node;
       if(current == null) { current = new_node }
     }
 
-    LinkedList.prototype.prepend = function prepend(value) {
+    this.prepend = function prepend(value) {
       var first = first_node();
       var new_node = new Node(value, first, null);
       if(first) { first.previous = new_node }
       if(current == null) { current = new_node }
     }
 
-    LinkedList.prototype.current_node = function current() {
+    this.current = function current() {
       if(current) current.value;
       else null;
     }
 
-    LinkedList.prototype.next = function next() {
+    this.next = function next() {
       if(current.next) { current = current.next }
     }
 
-    LinkedList.prototype.previous = function previous() {
+    this.previous = function previous() {
       if(current.previous) { current = current.previous }
     }
 
-    LinkedList.prototype.all = function(all) {
+    this.all = function all() {
       var local_current = first_node();
       var result = [];
-      while(local_current.next != null){
+      while(local_current && local_current.next != null){
         result.push(local_current.value);
         local_current = local_current.next;
       }
 
       return result;
     }
-
-    return LinkedList;
-  })();
+  }
 
   // usage:
 
