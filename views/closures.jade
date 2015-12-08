@@ -156,8 +156,11 @@ pre: code.language-javascript.
     this.all = function all() {
       var local_current = first_node();
       var result = [];
+
+      if(local_current) result.push(local_current.value);
+
       while(local_current && local_current.next != null){
-        result.push(local_current.value);
+        result.push(local_current.next.value);
         local_current = local_current.next;
       }
 
@@ -173,4 +176,7 @@ pre: code.language-javascript.
   list.prepend('C');
 
   console.log(list.all());
+
+  var list2 = new LinkedList();
+  list2.all();
 
