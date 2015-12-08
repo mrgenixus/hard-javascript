@@ -19,6 +19,35 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
+app.get('/introduction', function(req, res) {
+  res.render('introduction');
+});
+
+app.get('/closures', function(req, res) {
+  res.render('closures');
+});
+
+app.use('/closures/', express.static(__dirname + '/views/closures'));
+
+app.get('/dynamic-receivers', function(req, res) {
+  res.render('dynamic_receivers');
+});
+
+app.get('/call-and-apply', function(req, res) {
+  res.render('call_and_apply');
+});
+
+app.get('/callback-functions', function(req, res) {
+  res.render('callback_functions');
+});
+
+
+
+app.get('/thank-you', function(req, res) {
+  res.render('thank_you');
+});
+
+
 
 var server = app.listen(3000, function () {
   var host = server.address().address;

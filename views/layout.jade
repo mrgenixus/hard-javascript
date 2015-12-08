@@ -7,7 +7,41 @@ html(lang="en")
 
   body
     .uk-container.uk-container-center
+      nav.uk-navbar.uk-margin-large-bottom
+        a.uk-navbar-brand.uk-hidden-small(href='layouts_frontpage.html') Hard Javascript
+        ul.uk-navbar-nav.uk-hidden-small
+          li
+            a(href='/') Who am I
+          li
+            a(href='/introduction') Introduction
+          li
+            a(href='/closures') Closures
+          li
+            a(href='/dynamic-recievers') Dynamic Receivers
+          li
+            a(href='/call-and-apply') Call and Apply
+          li
+            a(href='/callback-functions') Callback Functions
+
+        a.uk-navbar-toggle.uk-visible-small(href='#offcanvas', data-uk-offcanvas='')
+        .uk-navbar-brand.uk-navbar-center.uk-visible-small Hard Javascript
       != body
+
+    #offcanvas.uk-offcanvas
+      .uk-offcanvas-bar
+        ul.uk-nav.uk-nav-offcanvas
+          li.uk-active
+            a(href='/') Introduction
+          li
+            a(href='/whoami') Who am I
+          li
+            a(href='/closures') Closures
+          li
+            a(href='/dynamic-recievers') Dynamic Receivers
+          li
+            a(href='/call-and-apply') Call and Apply
+          li
+            a(href='/callback-functions') Callback Functions
 
     script(src='js/prism.js')
     script(src='js/jquery.min.js')
